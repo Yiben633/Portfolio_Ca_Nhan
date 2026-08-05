@@ -12,6 +12,7 @@ export default {
         muted: 'rgb(var(--color-muted) / <alpha-value>)',
         border: 'rgb(var(--color-border) / <alpha-value>)',
         accent: 'rgb(var(--color-accent) / <alpha-value>)',
+        'accent-2': 'rgb(var(--color-accent-2) / <alpha-value>)',
         'accent-foreground': 'rgb(var(--color-accent-foreground) / <alpha-value>)',
       },
       fontFamily: {
