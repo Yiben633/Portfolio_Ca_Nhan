@@ -1,7 +1,7 @@
 import type { Profile } from '../types/portfolio'
 
 export const profile: Profile = {
-  name: 'Nguyễn Văn A',
+  name: 'Nguyễn Tấn Yên',
   title: 'Frontend Developer',
   roles: ['React Developer', 'UI Engineer', 'Freelancer'],
   bio: 'Tôi xây dựng những sản phẩm web nhanh, dễ dùng và có giao diện chỉn chu.',
