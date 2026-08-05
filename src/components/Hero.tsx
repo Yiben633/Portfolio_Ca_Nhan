@@ -31,10 +31,9 @@ export function Hero() {
         <p className="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-accent">
           <span className="h-px w-9 bg-accent" /> Xin chào, tôi là
         </p>
-        <h1 id="hero-title" className="max-w-5xl text-[clamp(3.5rem,9vw,8.5rem)] font-bold leading-[0.9] tracking-[-0.06em]">
-          {profile.name}
-          <br />
-          <span className="font-serif font-normal italic text-accent">{profile.title}</span>
+        <h1 id="hero-title" className="max-w-4xl text-[clamp(3rem,7.5vw,7rem)] font-bold leading-[1.06] tracking-[-0.04em] sm:text-[clamp(3.5rem,7vw,7rem)]">
+          <span className="block break-words">{profile.name}</span>
+          <span className="mt-3 block font-serif text-[clamp(2.75rem,6vw,6rem)] font-normal italic leading-[1.08] tracking-[-0.03em] text-accent sm:mt-4">{profile.title}</span>
         </h1>
         <div className="mt-8 flex min-h-8 items-center gap-3 text-sm font-semibold text-muted sm:text-base" aria-live="polite">
           <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
