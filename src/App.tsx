@@ -1,39 +1,14 @@
-import { ArrowDownRight, ArrowUpRight, Github, Linkedin, Mail, MapPin, Moon, MoveUpRight, Sun } from 'lucide-react'
+import { ArrowDownRight, ArrowUpRight, Mail, MapPin, MoveUpRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { profile } from './data/profile'
 import { projects } from './data/projects'
 import { skillGroups } from './data/skills'
-import { useTheme } from './hooks/useTheme'
+import { MainLayout } from './layouts/MainLayout'
 
 function App() {
-  const { theme, toggleTheme } = useTheme()
-  const currentYear = new Date().getFullYear()
-
   return (
-    <main className="min-h-screen overflow-hidden bg-background text-text transition-colors duration-300">
-      <nav className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12">
-          <a href="#top" className="flex items-center gap-3 text-sm font-bold tracking-tight">
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-accent text-accent-foreground">A.</span>
-            <span className="hidden sm:inline">{profile.name}</span>
-          </a>
-          <div className="hidden items-center gap-7 text-xs font-semibold uppercase tracking-[0.16em] text-muted md:flex">
-            <a className="transition hover:text-accent" href="#work">Công việc</a>
-            <a className="transition hover:text-accent" href="#about">Giới thiệu</a>
-            <a className="transition hover:text-accent" href="#contact">Liên hệ</a>
-          </div>
-          <button
-            type="button"
-            onClick={toggleTheme}
-            aria-label={theme === 'dark' ? 'Chuyển sang giao diện sáng' : 'Chuyển sang giao diện tối'}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-muted transition hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          >
-            {theme === 'dark' ? <Sun size={17} aria-hidden="true" /> : <Moon size={17} aria-hidden="true" />}
-          </button>
-        </div>
-      </nav>
-
-      <div id="top" className="mx-auto max-w-7xl px-5 pb-24 pt-28 sm:px-8 lg:px-12">
+    <MainLayout>
+      <div id="top" className="mx-auto max-w-7xl overflow-hidden px-5 pb-24 pt-28 sm:px-8 lg:px-12">
         <section className="relative grid min-h-[calc(100vh-7rem)] items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
@@ -126,7 +101,7 @@ function App() {
             <div><p className="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-accent">02 / About me</p><h2 className="text-4xl font-bold tracking-[-0.04em] sm:text-6xl">Sau màn hình là một người thật.</h2></div>
             <div><p className="text-2xl font-medium leading-relaxed tracking-tight sm:text-4xl">{profile.longBio} Tôi tin sản phẩm tốt luôn bắt đầu từ việc lắng nghe đúng câu hỏi.</p><div className="mt-10 flex items-center gap-2 text-sm text-muted"><MapPin size={16} className="text-accent" /> {profile.location}</div></div>
           </div>
-          <div className="mt-20 grid gap-10 border-t border-border pt-10 sm:grid-cols-2 lg:grid-cols-5">
+          <div id="skills" className="mt-20 grid scroll-mt-24 gap-10 border-t border-border pt-10 sm:grid-cols-2 lg:grid-cols-5">
             {skillGroups.map((group) => <div key={group.category}><p className="mb-4 font-mono text-[10px] uppercase tracking-[0.18em] text-accent">{group.category}</p><ul className="space-y-2 text-sm text-muted">{group.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul></div>)}
           </div>
         </section>
@@ -137,9 +112,8 @@ function App() {
           <a href={`mailto:${profile.email}`} className="group mt-10 inline-flex items-center gap-3 rounded-full bg-text px-6 py-4 text-sm font-bold text-background transition hover:-translate-y-1 hover:bg-accent hover:text-accent-foreground"><Mail size={17} /> {profile.email} <ArrowUpRight size={17} className="transition group-hover:translate-x-1 group-hover:-translate-y-1" /></a>
         </section>
 
-        <footer className="flex flex-col justify-between gap-6 py-10 text-xs text-muted sm:flex-row sm:items-center"><p>© {currentYear} {profile.name}. Crafted with care.</p><div className="flex items-center gap-4">{profile.socials.map((social) => <a key={social.label} href={social.url} target="_blank" rel="noreferrer" aria-label={social.label} className="transition hover:text-accent">{social.label === 'GitHub' ? <Github size={17} /> : <Linkedin size={17} />}</a>)}</div></footer>
       </div>
-    </main>
+    </MainLayout>
   )
 }
 
