@@ -7,8 +7,8 @@ export const profile: Profile = {
   bio: 'Tôi xây dựng những sản phẩm web nhanh, dễ dùng và có giao diện chỉn chu.',
   longBio: 'Tôi là một nhà phát triển phần mềm yêu thích việc biến ý tưởng thành trải nghiệm số rõ ràng và hiệu quả.',
   avatar: '/avatar-placeholder.svg',
-  email: 'hello@example.com',
-  phone: '+84 900 000 000',
+  email: 'BinN63342@gmail.com',
+  phone: '0369222647',
   location: 'Thành phố Hồ Chí Minh, Việt Nam',
   cvUrl: '/cv.pdf',
   socials: [
