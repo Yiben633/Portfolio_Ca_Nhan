@@ -79,7 +79,7 @@ export function Hero() {
             <p className="mt-2 text-xl font-semibold">Xây dựng trải nghiệm web đáng nhớ.</p>
           </div>
         </div>
-        <div className="absolute -bottom-7 -left-7 grid h-24 w-24 place-items-center rounded-full bg-accent text-accent-foreground shadow-xl shadow-accent/20 sm:h-28 sm:w-28">
+        <div className="absolute -right-5 -top-5 z-20 grid h-20 w-20 place-items-center rounded-full bg-accent text-accent-foreground shadow-xl shadow-accent/20 sm:-right-7 sm:-top-7 sm:h-24 sm:w-24">
           <div className="text-center text-[10px] font-bold uppercase leading-4 tracking-[0.15em]">Scroll<br />to explore<br /><MoveUpRight className="mx-auto mt-1" size={16} /></div>
         </div>
         <span className="absolute -right-3 -top-4 text-5xl text-accent" aria-hidden="true">✳</span>
