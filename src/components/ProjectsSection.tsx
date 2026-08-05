@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { ArrowUpRight, ExternalLink, Github, X } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { projects } from '../data/projects'
@@ -7,6 +7,7 @@ import type { Project } from '../types/portfolio'
 const allFilter = 'Tất cả'
 
 export function ProjectsSection() {
+  const prefersReducedMotion = useReducedMotion()
   const [activeFilter, setActiveFilter] = useState(allFilter)
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const dialogRef = useRef<HTMLDivElement>(null)
@@ -41,7 +42,7 @@ export function ProjectsSection() {
       <motion.div layout className="grid gap-x-7 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence mode="popLayout">
           {visibleProjects.map((project, index) => (
-            <motion.article key={project.id} layout initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, scale: 0.96 }} transition={{ duration: 0.3, delay: index * 0.04 }} className="group">
+            <motion.article key={project.id} layout={!prefersReducedMotion} initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={prefersReducedMotion ? undefined : { opacity: 0, scale: 0.96 }} transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.3, delay: index * 0.04 }} className="group">
               <button type="button" onClick={() => setSelectedProject(project)} className="block w-full text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-background">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[1.35rem] bg-card">
                   <img src={project.image} alt={`Ảnh xem trước dự án ${project.title}`} loading={index > 0 ? 'lazy' : 'eager'} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />

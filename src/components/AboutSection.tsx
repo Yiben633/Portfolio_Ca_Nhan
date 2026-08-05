@@ -1,5 +1,5 @@
 import { Code2, Compass, FolderKanban, Sparkles } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { profile } from '../data/profile'
 
 const statIcons = {
@@ -10,6 +10,8 @@ const statIcons = {
 }
 
 export function AboutSection() {
+  const prefersReducedMotion = useReducedMotion()
+
   return (
     <section id="about" className="scroll-mt-24 border-t border-border py-24" aria-labelledby="about-title">
       <div className="grid gap-14 lg:grid-cols-[0.65fr_1fr] lg:gap-24">
@@ -28,10 +30,10 @@ export function AboutSection() {
           return (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 18 }}
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.45, delay: index * 0.06 }}
+              transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.45, delay: index * 0.06 }}
               className="group border border-border bg-card p-5 transition duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-lg hover:shadow-accent/10"
             >
               <Icon size={19} className="text-accent transition group-hover:scale-110" aria-hidden="true" />

@@ -2,6 +2,7 @@ import { Menu, Moon, Sun, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { profile } from '../data/profile'
 import { useTheme } from '../hooks/useTheme'
+import { useActiveSection } from '../hooks/useActiveSection'
 
 const navItems = [
   { label: 'Giới thiệu', href: '#about' },
@@ -9,11 +10,13 @@ const navItems = [
   { label: 'Kỹ năng', href: '#skills' },
   { label: 'Liên hệ', href: '#contact' },
 ]
+const observedSectionIds = ['about', 'work', 'skills', 'contact']
 
 export function Navbar() {
   const { theme, toggleTheme } = useTheme()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [hasScrolled, setHasScrolled] = useState(false)
+  const activeSection = useActiveSection(observedSectionIds)
 
   useEffect(() => {
     const onScroll = () => setHasScrolled(window.scrollY > 16)
@@ -46,7 +49,11 @@ export function Navbar() {
           </a>
 
           <div className="hidden items-center gap-7 text-xs font-semibold uppercase tracking-[0.16em] text-muted md:flex">
-            {navItems.map((item) => <a key={item.href} className="transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" href={item.href}>{item.label}</a>)}
+            {navItems.map((item) => {
+              const sectionId = item.href.slice(1)
+              const isActive = activeSection === sectionId
+              return <a key={item.href} aria-current={isActive ? 'location' : undefined} className={`relative transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${isActive ? 'text-accent' : ''}`} href={item.href}>{item.label}{isActive && <span className="absolute -bottom-2 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-accent" aria-hidden="true" />}</a>
+            })}
           </div>
 
           <div className="flex items-center gap-2">

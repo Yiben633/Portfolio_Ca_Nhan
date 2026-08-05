@@ -43,6 +43,7 @@ body {
   margin: 0;
   background: rgb(var(--color-background));
   transition: background-color 300ms ease, color 300ms ease;
+  overflow-x: hidden;
 }
 
 html {
