@@ -31,6 +31,22 @@ npm run preview
 
 Thư mục output production là `dist`.
 
+## Chạy bằng Docker
+
+Docker sẽ build project bằng Node ở stage đầu, sau đó dùng Nginx để serve static site ở stage cuối.
+
+```bash
+docker compose up -d --build
+```
+
+Mở website tại [http://localhost:8080](http://localhost:8080). Nginx đã cấu hình fallback về `index.html` cho các route phía client và cache dài hạn cho asset trong `/assets/`.
+
+Dừng container:
+
+```bash
+docker compose down
+```
+
 ## Tùy biến dữ liệu
 
 ### Thông tin cá nhân
