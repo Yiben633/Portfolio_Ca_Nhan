@@ -1,0 +1,43 @@
+import type { Project } from '../types/portfolio'
+
+export const projects: Project[] = [
+  {
+    id: 'project-1',
+    title: 'Dashboard quản lý bán hàng',
+    shortDescription: 'Giao diện theo dõi doanh thu và đơn hàng.',
+    description: 'Ứng dụng dashboard giúp đội ngũ theo dõi các chỉ số kinh doanh theo thời gian thực.',
+    image: '/projects/dashboard-placeholder.svg',
+    screenshots: [],
+    tags: ['React', 'TypeScript', 'Tailwind CSS'],
+    features: ['Biểu đồ doanh thu', 'Quản lý đơn hàng'],
+    role: 'Frontend Developer',
+    demoUrl: 'https://example.com',
+    githubUrl: 'https://github.com/',
+  },
+  {
+    id: 'project-2',
+    title: 'Landing page sản phẩm',
+    shortDescription: 'Trang giới thiệu sản phẩm tối ưu chuyển đổi.',
+    description: 'Landing page hiện đại, responsive và tập trung vào hành trình người dùng.',
+    image: '/projects/landing-placeholder.svg',
+    screenshots: [],
+    tags: ['React', 'Framer Motion'],
+    features: ['Responsive design', 'Animation tương tác'],
+    role: 'UI Developer',
+    demoUrl: 'https://example.com',
+    githubUrl: 'https://github.com/',
+  },
+  {
+    id: 'project-3',
+    title: 'Ứng dụng ghi chú',
+    shortDescription: 'Công cụ ghi chú cá nhân đơn giản và nhanh.',
+    description: 'Ứng dụng quản lý ghi chú với trải nghiệm gọn gàng, phù hợp cho công việc hằng ngày.',
+    image: '/projects/notes-placeholder.svg',
+    screenshots: [],
+    tags: ['React', 'Node.js', 'MongoDB'],
+    features: ['Tìm kiếm ghi chú', 'Phân loại nội dung'],
+    role: 'Full-stack Developer',
+    demoUrl: 'https://example.com',
+    githubUrl: 'https://github.com/',
+  },
+]
