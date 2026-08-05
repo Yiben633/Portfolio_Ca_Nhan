@@ -1,61 +1,16 @@
-import { ArrowDownRight, ArrowUpRight, Mail, MapPin, MoveUpRight } from 'lucide-react'
+import { ArrowUpRight, Mail, MapPin } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { profile } from './data/profile'
 import { projects } from './data/projects'
 import { skillGroups } from './data/skills'
+import { Hero } from './components/Hero'
 import { MainLayout } from './layouts/MainLayout'
 
 function App() {
   return (
     <MainLayout>
       <div id="top" className="mx-auto max-w-7xl overflow-hidden px-5 pb-24 pt-28 sm:px-8 lg:px-12">
-        <section className="relative grid min-h-[calc(100vh-7rem)] items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10"
-          >
-            <p className="mb-7 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-              <span className="h-px w-9 bg-accent" /> Sẵn sàng cho dự án mới
-            </p>
-            <h1 className="max-w-5xl text-[clamp(3.5rem,9vw,8.5rem)] font-bold leading-[0.9] tracking-[-0.06em]">
-              Thiết kế số
-              <br />
-              <span className="font-serif font-normal italic text-accent">có chủ đích.</span>
-            </h1>
-            <p className="mt-9 max-w-xl text-base leading-8 text-muted sm:text-lg">
-              {profile.bio} Tôi kết hợp tư duy sản phẩm, code sạch và những chi tiết nhỏ tạo nên cảm giác lớn.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a href="#work" className="group inline-flex items-center gap-3 rounded-full bg-accent px-6 py-3.5 text-sm font-bold text-accent-foreground transition hover:-translate-y-1 hover:bg-accent-2">
-                Xem dự án <ArrowDownRight size={17} className="transition group-hover:rotate-[-45deg]" />
-              </a>
-              <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 px-2 py-3.5 text-sm font-semibold text-muted transition hover:text-accent">
-                Nói chuyện với tôi <ArrowUpRight size={16} />
-              </a>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94, rotate: 3 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto w-full max-w-md lg:ml-auto"
-          >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-card shadow-2xl shadow-accent/10">
-              <img src={profile.avatar} alt={`Ảnh đại diện của ${profile.name}`} className="h-full w-full object-cover" />
-              <div className="absolute inset-x-0 bottom-0 bg-black/65 px-6 pb-6 pt-8 text-white">
-                <p className="text-xs uppercase tracking-[0.2em] text-white/70">Hiện tại</p>
-                <p className="mt-2 text-xl font-semibold">Xây dựng trải nghiệm web đáng nhớ.</p>
-              </div>
-            </div>
-            <div className="absolute -bottom-7 -left-7 grid h-24 w-24 place-items-center rounded-full bg-accent text-accent-foreground shadow-xl shadow-accent/20 sm:h-28 sm:w-28">
-              <div className="text-center text-[10px] font-bold uppercase leading-4 tracking-[0.15em]">Scroll<br />to explore<br /><MoveUpRight className="mx-auto mt-1" size={16} /></div>
-            </div>
-            <span className="absolute -right-3 -top-4 text-5xl text-accent" aria-hidden="true">✳</span>
-          </motion.div>
-        </section>
+        <Hero />
 
         <div className="my-20 flex items-center gap-4 text-accent" aria-hidden="true">
           <span className="text-xl">✳</span><span className="h-px flex-1 bg-border" /><span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Selected work / 2024—2026</span><span className="h-px flex-1 bg-border" /><span className="text-xl">✳</span>
