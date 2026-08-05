@@ -15,6 +15,8 @@ export type Profile = {
   location: string
   cvUrl: string
   socials: SocialLink[]
+  aboutParagraphs: string[]
+  stats: { label: string; value: string; detail: string; icon: 'projects' | 'experience' | 'technologies' | 'focus' }[]
 }
 
 export type Project = {

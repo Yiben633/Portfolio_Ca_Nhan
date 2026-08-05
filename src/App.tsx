@@ -1,9 +1,10 @@
-import { ArrowUpRight, Mail, MapPin } from 'lucide-react'
+import { ArrowUpRight, Mail } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { profile } from './data/profile'
 import { projects } from './data/projects'
-import { skillGroups } from './data/skills'
+import { AboutSection } from './components/AboutSection'
 import { Hero } from './components/Hero'
+import { SkillsSection } from './components/SkillsSection'
 import { MainLayout } from './layouts/MainLayout'
 
 function App() {
@@ -51,18 +52,11 @@ function App() {
           </div>
         </section>
 
-        <section id="about" className="scroll-mt-24 border-t border-border py-24">
-          <div className="grid gap-14 lg:grid-cols-[0.65fr_1fr] lg:gap-24">
-            <div><p className="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-accent">02 / About me</p><h2 className="text-4xl font-bold tracking-[-0.04em] sm:text-6xl">Sau màn hình là một người thật.</h2></div>
-            <div><p className="text-2xl font-medium leading-relaxed tracking-tight sm:text-4xl">{profile.longBio} Tôi tin sản phẩm tốt luôn bắt đầu từ việc lắng nghe đúng câu hỏi.</p><div className="mt-10 flex items-center gap-2 text-sm text-muted"><MapPin size={16} className="text-accent" /> {profile.location}</div></div>
-          </div>
-          <div id="skills" className="mt-20 grid scroll-mt-24 gap-10 border-t border-border pt-10 sm:grid-cols-2 lg:grid-cols-5">
-            {skillGroups.map((group) => <div key={group.category}><p className="mb-4 font-mono text-[10px] uppercase tracking-[0.18em] text-accent">{group.category}</p><ul className="space-y-2 text-sm text-muted">{group.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul></div>)}
-          </div>
-        </section>
+        <AboutSection />
+        <SkillsSection />
 
         <section id="contact" className="scroll-mt-24 rounded-[2rem] bg-card px-6 py-16 text-center sm:px-12 sm:py-24">
-          <p className="mb-5 font-mono text-xs uppercase tracking-[0.18em] text-accent">03 / Get in touch</p>
+          <p className="mb-5 font-mono text-xs uppercase tracking-[0.18em] text-accent">04 / Get in touch</p>
           <h2 className="mx-auto max-w-4xl text-[clamp(3rem,8vw,7rem)] font-bold leading-[0.9] tracking-[-0.06em]">Cùng làm điều gì đó <span className="font-serif font-normal italic text-accent">thật đẹp.</span></h2>
           <a href={`mailto:${profile.email}`} className="group mt-10 inline-flex items-center gap-3 rounded-full bg-text px-6 py-4 text-sm font-bold text-background transition hover:-translate-y-1 hover:bg-accent hover:text-accent-foreground"><Mail size={17} /> {profile.email} <ArrowUpRight size={17} className="transition group-hover:translate-x-1 group-hover:-translate-y-1" /></a>
         </section>
