@@ -1,7 +1,8 @@
-import { ArrowDownRight, ArrowUpRight, Download, Github, Linkedin, Mail, MapPin, MoveUpRight } from 'lucide-react'
+import { ArrowDownRight, ArrowUpRight, Download, Github, Globe2, Mail, MapPin } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { profile } from '../data/profile'
+import { HeroAnimation } from './HeroAnimation'
 
 export function Hero() {
   const prefersReducedMotion = useReducedMotion()
@@ -18,7 +19,7 @@ export function Hero() {
     return () => window.clearInterval(intervalId)
   }, [prefersReducedMotion])
 
-  const socialIcon = (label: string) => label === 'GitHub' ? <Github size={16} /> : <Linkedin size={16} />
+  const socialIcon = (label: string) => label === 'GitHub' ? <Github size={16} /> : <Globe2 size={16} />
 
   return (
     <section className="relative grid min-h-[calc(100vh-7rem)] items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20" aria-labelledby="hero-title">
@@ -66,24 +67,7 @@ export function Hero() {
         </div>
       </motion.div>
 
-      <motion.div
-        initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.94, rotate: 3 }}
-        animate={prefersReducedMotion ? undefined : { opacity: 1, scale: 1, rotate: 0, y: [0, -8, 0] }}
-        transition={prefersReducedMotion ? undefined : { opacity: { duration: 0.8, delay: 0.15 }, scale: { duration: 0.8, delay: 0.15 }, rotate: { duration: 0.8, delay: 0.15 }, y: { duration: 5, repeat: Infinity, ease: 'easeInOut' } }}
-        className="relative mx-auto w-full max-w-md lg:ml-auto"
-      >
-        <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-accent/30 bg-card shadow-2xl shadow-accent/10">
-          <img src={profile.avatar} alt={`Ảnh đại diện của ${profile.name}`} className="h-full w-full object-cover" />
-          <div className="absolute inset-x-0 bottom-0 bg-black/65 px-6 pb-6 pt-8 text-white">
-            <p className="text-xs uppercase tracking-[0.2em] text-white/70">Đang làm việc</p>
-            <p className="mt-2 text-xl font-semibold">Xây dựng trải nghiệm web đáng nhớ.</p>
-          </div>
-        </div>
-        <div className="absolute -right-5 -top-5 z-20 grid h-20 w-20 place-items-center rounded-full bg-accent text-accent-foreground shadow-xl shadow-accent/20 sm:-right-7 sm:-top-7 sm:h-24 sm:w-24">
-          <div className="text-center text-[10px] font-bold uppercase leading-4 tracking-[0.15em]">Scroll<br />to explore<br /><MoveUpRight className="mx-auto mt-1" size={16} /></div>
-        </div>
-        <span className="absolute -right-3 -top-4 text-5xl text-accent" aria-hidden="true">✳</span>
-      </motion.div>
+      <HeroAnimation />
     </section>
   )
 }

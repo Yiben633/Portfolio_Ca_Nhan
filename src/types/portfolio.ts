@@ -9,7 +9,6 @@ export type Profile = {
   roles: string[]
   bio: string
   longBio: string
-  avatar: string
   email: string
   phone: string
   location: string

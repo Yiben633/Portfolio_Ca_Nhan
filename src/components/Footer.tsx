@@ -1,8 +1,8 @@
-import { ArrowUp, Github, Linkedin } from 'lucide-react'
+import { ArrowUp, Github, Globe2 } from 'lucide-react'
 import { profile } from '../data/profile'
 
 export function Footer() {
-  const socialIcon = (label: string) => label === 'GitHub' ? <Github size={17} /> : <Linkedin size={17} />
+  const socialIcon = (label: string) => label === 'GitHub' ? <Github size={17} /> : <Globe2 size={17} />
 
   return (
     <footer className="mx-auto flex max-w-7xl flex-col justify-between gap-6 px-5 py-10 text-xs text-muted sm:flex-row sm:items-center sm:px-8 lg:px-12">

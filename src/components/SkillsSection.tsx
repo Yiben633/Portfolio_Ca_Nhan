@@ -1,26 +1,33 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import type { IconType } from 'react-icons'
-import { SiCss, SiDocker, SiExpress, SiFigma, SiGit, SiGithub, SiHtml5, SiJavascript, SiMongodb, SiNodedotjs, SiPostgresql, SiReact, SiTailwindcss, SiTypescript, SiVercel } from 'react-icons/si'
-import { VscCode } from 'react-icons/vsc'
+import { SiCss, SiDocker, SiEslint, SiExpress, SiGit, SiGithub, SiHtml5, SiJavascript, SiPostgresql, SiPrisma, SiPrettier, SiReact, SiReactrouter, SiRedis, SiTailwindcss, SiVercel, SiVite, SiPostman } from 'react-icons/si'
 import { skillGroups } from '../data/skills'
 
 const skillIcons: Record<string, IconType> = {
   HTML: SiHtml5,
   CSS: SiCss,
-  JavaScript: SiJavascript,
-  TypeScript: SiTypescript,
-  React: SiReact,
+  'JavaScript ES6+': SiJavascript,
+  'React.js': SiReact,
   'Tailwind CSS': SiTailwindcss,
-  'Node.js': SiNodedotjs,
-  Express: SiExpress,
-  MongoDB: SiMongodb,
+  'React Router': SiReactrouter,
+  'Responsive Web Design': SiReact,
+  'React Hooks': SiReact,
+  'Context API': SiReact,
+  'REST API': SiReact,
+  'Express.js cơ bản': SiExpress,
   PostgreSQL: SiPostgresql,
+  Prisma: SiPrisma,
+  'Redis cơ bản': SiRedis,
   Git: SiGit,
-  Figma: SiFigma,
-  'VS Code': VscCode,
+  GitHub: SiGithub,
+  Vite: SiVite,
+  ESLint: SiEslint,
+  Prettier: SiPrettier,
+  Postman: SiPostman,
   Vercel: SiVercel,
   Docker: SiDocker,
-  'GitHub Actions': SiGithub,
+  HTML5: SiHtml5,
+  CSS3: SiCss,
 }
 
 export function SkillsSection() {

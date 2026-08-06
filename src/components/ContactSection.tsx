@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Github, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react'
+import { Github, Globe2, Mail, MapPin, Phone, Send } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -28,7 +28,7 @@ export function ContactSection() {
     reset()
   }
 
-  const socialIcon = (label: string) => label === 'GitHub' ? <Github size={22} /> : <Linkedin size={22} />
+  const socialIcon = (label: string) => label === 'GitHub' ? <Github size={22} /> : <Globe2 size={22} />
 
   return (
     <section id="contact" className="scroll-mt-24 rounded-[2rem] bg-card px-6 py-14 sm:px-10 sm:py-20 lg:px-14" aria-labelledby="contact-title">
@@ -39,7 +39,7 @@ export function ContactSection() {
           <p className="mt-7 max-w-md text-base leading-7 text-muted">Bạn có ý tưởng, một bài toán thú vị hoặc chỉ muốn trao đổi về sản phẩm? Hãy gửi tin nhắn, mình sẽ phản hồi sớm.</p>
           <div className="mt-10 space-y-5">
             <a href={`mailto:${profile.email}`} className="flex items-center gap-4 text-sm font-semibold transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"><span className="grid h-10 w-10 place-items-center rounded-full border border-border text-accent"><Mail size={17} /></span><span>{profile.email}</span></a>
-            <a href={`tel:+84${profile.phone.slice(1)}`} className="flex items-center gap-4 text-sm font-semibold transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"><span className="grid h-10 w-10 place-items-center rounded-full border border-border text-accent"><Phone size={17} /></span><span>{profile.phone}</span></a>
+            <a href={`tel:${profile.phone.replace(/\s/g, '')}`} className="flex items-center gap-4 text-sm font-semibold transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"><span className="grid h-10 w-10 place-items-center rounded-full border border-border text-accent"><Phone size={17} /></span><span>{profile.phone}</span></a>
             <div className="flex items-center gap-4 text-sm text-muted"><span className="grid h-10 w-10 place-items-center rounded-full border border-border text-accent"><MapPin size={17} /></span><span>{profile.location}</span></div>
           </div>
           <div className="mt-10 flex gap-3">{profile.socials.map((social) => <a key={social.label} href={social.url} target="_blank" rel="noreferrer" aria-label={social.label} className="grid h-11 w-11 place-items-center rounded-full border border-border text-muted transition hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">{socialIcon(social.label)}</a>)}</div>
