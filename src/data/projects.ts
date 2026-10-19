@@ -2,6 +2,19 @@ import type { Project } from '../types/portfolio'
 
 export const projects: Project[] = [
   {
+    id: 'vuon-chu-cai',
+    title: 'Vườn Chữ Diệu Kỳ - Website học tiếng Việt',
+    shortDescription: 'Không gian học chữ cái, ghép vần và khám phá truyện cho trẻ em.',
+    description: 'Ứng dụng học tiếng Việt dành cho trẻ em, được xây dựng bằng React, Express và MongoDB/Mongoose. Dự án kết hợp học bảng chữ cái, ghép vần, truyện tương tác và đố vui, đồng thời cung cấp khu vực phụ huynh để theo dõi tiến độ học tập.',
+    image: '/projects/vuon-chu-cai-placeholder.svg',
+    screenshots: [],
+    tags: ['React', 'Express', 'MongoDB', 'Mongoose'],
+    features: ['Học 29 chữ cái tiếng Việt', 'Ghép vần và truyện tương tác', 'Đố vui và phần thưởng học tập', 'Theo dõi tiến độ cho phụ huynh'],
+    role: 'Full-stack Developer',
+    demoUrl: 'https://vuonchucai.vercel.app',
+    githubUrl: 'https://github.com/Yiben633/Vuon_Chu_Cai',
+  },
+  {
     id: 'mono-store',
     title: 'Mono Store - Website quản lý bán hàng',
     shortDescription: 'Website bán hàng với trải nghiệm mua sắm đầy đủ.',

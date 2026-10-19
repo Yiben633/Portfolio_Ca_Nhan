@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title">
+  <title id="title">Minh họa Vườn Chữ Diệu Kỳ</title>
+  <rect width="1200" height="720" fill="#173e32"/>
+  <rect x="70" y="60" width="1060" height="600" rx="24" fill="#f6f9ed"/>
+  <circle cx="1010" cy="165" r="46" fill="#f5cc65"/>
+  <text x="130" y="155" fill="#245d45" font-family="Arial, sans-serif" font-size="28" font-weight="700">VƯỜN CHỮ DIỆU KỲ</text>
+  <text x="130" y="215" fill="#577064" font-family="Arial, sans-serif" font-size="22">Cùng bé khám phá tiếng Việt</text>
+  <path d="M70 560 Q330 440 600 560 T1130 530 V636 Q1130 660 1106 660 H94 Q70 660 70 636Z" fill="#d3e9b4"/>
+  <g font-family="Arial, sans-serif" font-size="112" font-weight="700" text-anchor="middle">
+    <rect x="170" y="300" width="240" height="220" rx="28" fill="#f8dc98"/>
+    <text x="290" y="449" fill="#865723">A</text>
+    <rect x="480" y="275" width="240" height="220" rx="28" fill="#c2dfc4"/>
+    <text x="600" y="424" fill="#245d45">Ă</text>
+    <rect x="790" y="300" width="240" height="220" rx="28" fill="#eed2c2"/>
+    <text x="910" y="449" fill="#8c4e39">Â</text>
+  </g>
+</svg>
